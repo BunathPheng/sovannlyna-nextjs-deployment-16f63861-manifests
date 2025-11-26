@@ -1,0 +1,26 @@
+---
+# Source: helm for kubernetes/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sovannlyna-nextjs-deployment-16f63861
+  labels:
+    app: sovannlyna-nextjs-deployment-16f63861
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: sovannlyna-nextjs-deployment-16f63861
+  template:
+    metadata:
+      labels:
+        app: sovannlyna-nextjs-deployment-16f63861
+    spec:
+      serviceAccountName: ingress-manager
+      containers:
+        - name: sovannlyna-nextjs-deployment-16f63861
+          image: docker.io/phengbunath/sovannlyna-nextjs-deployment-16f63861:1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
