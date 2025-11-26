@@ -1,0 +1,16 @@
+---
+# Source: helm for kubernetes/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: sovannlyna-nextjs-deployment-16f63861          # Service name
+  labels:
+    app: sovannlyna-nextjs-deployment-16f63861
+spec:
+  type: ClusterIP   # Service type (ClusterIP, NodePort, LoadBalancer)
+  selector:
+    app: sovannlyna-nextjs-deployment-16f63861         # Matches Deployment labels
+  ports:
+    - protocol: TCP
+      port: 3000         # Service port
+      targetPort: 3000  # Target container port
